@@ -9,7 +9,13 @@ function App({}: AppProps) {
     <div className="App">
       <Container>
         <Row>
-          <Col>
+          <Col size={[{size: 'sm', col: 12}, {size: 'md', col: 6}, {size: 'lg', col: 4}]}>
+
+          </Col>
+          <Col size={[{size: 'sm', col: 12}, {size: 'md', col: 6}, {size: 'lg', col: 4}]}>
+
+          </Col>
+          <Col size={[{size: 'sm', col: 12}, {size: 'md', col: 6}, {size: 'lg', col: 4}]}>
 
           </Col>
         </Row>

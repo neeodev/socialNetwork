@@ -1,5 +1,7 @@
 import React from 'react'
 
+import '../sass/grid.scss';
+
 export const Container: React.FunctionComponent<ContainerProps> = props => 
   <div className={'grid-container ' + (props.className || '')}>
     {props.children}
@@ -11,7 +13,7 @@ export const Row: React.FunctionComponent<RowProps> = props =>
   </div>
 
 export const Col: React.FunctionComponent<ColProps> = props =>
-  <div className={'grid-col ' + (props.size?.map(s => 'grid-col-'+s.size+s.col).join(' ') || '') + ' ' + (props.className || '')}>
+  <div className={'grid-col ' + (props.size?.map(s => 'grid-col-'+s.size+'-'+s.col).join(' ') || '') + ' ' + (props.className || '')}>
     {props.children}
   </div>
 
@@ -30,14 +32,6 @@ type ColProps = {
 }
 
 type ColSize = {
-  size: EnumSize,
+  size: | 'xs'  | 'sm'  | 'md'  | 'lg'  | 'xl';
   col: number;
-}
-
-enum EnumSize {
-  xs = 'xs',
-  sm = 'sm',
-  md = 'md',
-  lg = 'lg',
-  xl = 'xl'
 }
